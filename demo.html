@@ -49,6 +49,7 @@ html, body {
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="grad.js"></script>
 <script>
+setInterval(function(){
   var loadedFunc = function() {
   	  var img = document.getElementById("gimg");
       var cvs = document.createElement("canvas");
@@ -60,6 +61,7 @@ html, body {
       var grad = new Grad(img, "r-grad");
       console.log(grad);
   }();
+        }, 5500);
 </script>
 </body>
 </html>
