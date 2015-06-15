@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple JS implementation</title>
+    <link rel="author" href="humans.txt">
+    
+<style type="text/css">
+html, body {
+	margin:0;
+}
+.graddy-container {
+	position: absolute;
+    text-align: center;
+	width: 100%;
+}
+.graddy {
+}
+.result-container {
+  margin: 0px;
+  padding:0px;
+  width: 100%!important;
+  height: 377px;
+}
+
+.r-grad {
+  height: 100vh; 
+  width: 100vw; 
+}
+
+
+.result {
+  width: 100%!important;
+  height: 377px;
+}
+</style>
+</head>
+<body>
+
+<div class="graddy-container">
+	<img src="http://lorempixel.com/671/377" class="graddy" id="gimg"/>
+</div>
+<div class="result-container">
+   <div class="result r-grad"></div>
+ </div>
+ 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="grad.js"></script>
+<script>
+  var loadedFunc = function() {
+  	  var img = document.getElementById("gimg");
+      var cvs = document.createElement("canvas");
+      var ctx = cvs.getContext("2d");
+      cvs.width = 960;
+      cvs.height = 377;
+      ctx.drawImage(img, 0, 0, 60, 60);
+      ctx.drawImage(img, 0, 0, cvs.width, cvs.height); 
+      var grad = new Grad(img, "r-grad");
+      console.log(grad);
+  }();
+</script>
+</body>
+</html>
